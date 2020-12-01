@@ -10,8 +10,16 @@ repositories {
 dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    testImplementation("io.kotest:kotest-runner-junit5:4.3.1")
+    testImplementation("io.kotest:kotest-assertions-core:4.3.1")
+    testImplementation("io.kotest:kotest-property:4.3.1")
 }
 
 application {
     mainClass.set("nl.rstraub.kata.kotlin.args.ArgsKt")
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
