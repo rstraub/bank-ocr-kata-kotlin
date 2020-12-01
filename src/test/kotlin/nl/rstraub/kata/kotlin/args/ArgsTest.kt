@@ -9,4 +9,10 @@ internal class ArgsTest : StringSpec({
 
         result shouldBe emptyMap()
     }
+
+    "should return true given a boolean flag" {
+        val result = Args() parse listOf("-l")
+
+        result shouldBe mapOf("-l" to true)
+    }
 })
