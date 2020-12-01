@@ -13,5 +13,5 @@ dependencies {
 }
 
 application {
-    mainClass.set("nl.rstraub.kata.kotlin.args.Args")
+    mainClass.set("nl.rstraub.kata.kotlin.args.ArgsKt")
 }
