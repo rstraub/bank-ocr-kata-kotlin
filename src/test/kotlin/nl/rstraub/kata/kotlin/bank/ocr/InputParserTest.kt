@@ -14,15 +14,6 @@ internal class InputParserTest : WordSpec({
 
             InputParser().parse(input) shouldBe "1"
         }
-        "convert an entry for a seven to a seven" {
-            val input =
-                " _ " +
-                "  |" +
-                "  |" +
-                "   "
-
-            InputParser().parse(input) shouldBe "7"
-        }
         "convert an entry for a two to a two" {
             val input =
                 " _ " +
@@ -31,7 +22,8 @@ internal class InputParserTest : WordSpec({
                 "   "
 
             InputParser().parse(input) shouldBe "2"
-            }
+        }
+
         "convert an entry for a three to a three" {
             val input =
                 " _ " +
@@ -40,6 +32,33 @@ internal class InputParserTest : WordSpec({
                 "   "
 
             InputParser().parse(input) shouldBe "3"
+        }
+        "convert an entry for a four to a four" {
+            val input =
+                "   " +
+                "|_|" +
+                "  | " +
+                "   "
+
+            InputParser().parse(input) shouldBe "4"
+        }
+        "convert an entry for a five to a five" {
+            val input =
+                " _ " +
+                        "|_ " +
+                        " _| " +
+                        "   "
+
+            InputParser().parse(input) shouldBe "5"
+        }
+        "convert an entry for a seven to a seven" {
+            val input =
+                " _ " +
+                "  |" +
+                "  |" +
+                "   "
+
+            InputParser().parse(input) shouldBe "7"
         }
     }
 })
