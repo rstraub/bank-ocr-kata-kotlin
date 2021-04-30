@@ -45,11 +45,20 @@ internal class InputParserTest : WordSpec({
         "convert an entry for a five to a five" {
             val input =
                 " _ " +
-                        "|_ " +
-                        " _| " +
-                        "   "
+                "|_ " +
+                " _| " +
+                "   "
 
             InputParser().parse(input) shouldBe "5"
+        }
+        "convert an entry for a six to a six" {
+            val input =
+                " _ " +
+                "|_ " +
+                "|_| " +
+                "   "
+
+            InputParser().parse(input) shouldBe "6"
         }
         "convert an entry for a seven to a seven" {
             val input =
