@@ -1,16 +1,25 @@
 package nl.rstraub.kata.kotlin.bank.ocr
 
 class AccountNumberParser {
-    private val AMOUNT_OF_LINES = 4
-    private val CHARACTERS_PER_LINE = 27
-    private val CHARACTERS_PER_NUMBER = 3
-    private val NUMBERS_PER_LINE = CHARACTERS_PER_LINE / CHARACTERS_PER_LINE
+    private companion object {
+        val AMOUNT_OF_ASCII_NUMBERS_PER_LINE = 9
+        val ASCII_NUMBERS_PER_LINE_RANGE = 0..AMOUNT_OF_ASCII_NUMBERS_PER_LINE - 1
+    }
 
     fun parse(input: String): String {
-        val charLine = input
-            .replace("\n", "")
-        val numberChars = charLine.chunked(3)
-        return (0..8).map{numberChars.get(it) + numberChars.get(it+9) + numberChars.get(it+18)}.map { NumberParser().parse(it) }.joinToString("")
+        return buildAsciiNumber(chonkize(input)).joinToString("", transform = NumberParser()::parse)
     }
+
+    private fun buildAsciiNumber(numberChunks: List<String>) =
+        ASCII_NUMBERS_PER_LINE_RANGE
+            .map {
+                numberChunks[it] +
+                        numberChunks[it + AMOUNT_OF_ASCII_NUMBERS_PER_LINE] +
+                        numberChunks[it + AMOUNT_OF_ASCII_NUMBERS_PER_LINE * 2]
+            }
+
+    private fun chonkize(input: String) = input
+        .replace("\n", "")
+        .chunked(3)
 
 }
