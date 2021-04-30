@@ -3,7 +3,7 @@ package nl.rstraub.kata.kotlin.bank.ocr
 import io.kotest.core.spec.style.WordSpec
 import io.kotest.matchers.shouldBe
 
-internal class InputParserTest : WordSpec({
+internal class NumberParserTest : WordSpec({
     "parse" should {
         "convert an entry for one to a one" {
             val input =
@@ -12,7 +12,7 @@ internal class InputParserTest : WordSpec({
                 "  |" +
                 "   "
 
-            InputParser().parse(input) shouldBe "1"
+            NumberParser().parse(input) shouldBe "1"
         }
         "convert an entry for a two to a two" {
             val input =
@@ -21,7 +21,7 @@ internal class InputParserTest : WordSpec({
                 "|_ " +
                 "   "
 
-            InputParser().parse(input) shouldBe "2"
+            NumberParser().parse(input) shouldBe "2"
         }
 
         "convert an entry for a three to a three" {
@@ -31,7 +31,7 @@ internal class InputParserTest : WordSpec({
                 " _| " +
                 "   "
 
-            InputParser().parse(input) shouldBe "3"
+            NumberParser().parse(input) shouldBe "3"
         }
         "convert an entry for a four to a four" {
             val input =
@@ -40,7 +40,7 @@ internal class InputParserTest : WordSpec({
                 "  | " +
                 "   "
 
-            InputParser().parse(input) shouldBe "4"
+            NumberParser().parse(input) shouldBe "4"
         }
         "convert an entry for a five to a five" {
             val input =
@@ -49,7 +49,7 @@ internal class InputParserTest : WordSpec({
                 " _| " +
                 "   "
 
-            InputParser().parse(input) shouldBe "5"
+            NumberParser().parse(input) shouldBe "5"
         }
         "convert an entry for a six to a six" {
             val input =
@@ -58,7 +58,7 @@ internal class InputParserTest : WordSpec({
                 "|_|" +
                 "   "
 
-            InputParser().parse(input) shouldBe "6"
+            NumberParser().parse(input) shouldBe "6"
         }
         "convert an entry for a seven to a seven" {
             val input =
@@ -67,7 +67,7 @@ internal class InputParserTest : WordSpec({
                 "  |" +
                 "   "
 
-            InputParser().parse(input) shouldBe "7"
+            NumberParser().parse(input) shouldBe "7"
         }
         "convert an entry for a eight to a eight" {
             val input =
@@ -76,7 +76,7 @@ internal class InputParserTest : WordSpec({
                 "|_|" +
                 "   "
 
-            InputParser().parse(input) shouldBe "8"
+            NumberParser().parse(input) shouldBe "8"
         }
         "convert an entry for a nine to a nine" {
             val input =
@@ -85,7 +85,7 @@ internal class InputParserTest : WordSpec({
                 " _|" +
                 "   "
 
-            InputParser().parse(input) shouldBe "9"
+            NumberParser().parse(input) shouldBe "9"
         }
         "convert an entry for a zero to a zero" {
             val input =
@@ -94,7 +94,7 @@ internal class InputParserTest : WordSpec({
                 "|_|" +
                 "   "
 
-            InputParser().parse(input) shouldBe "0"
+            NumberParser().parse(input) shouldBe "0"
         }
     }
 })
