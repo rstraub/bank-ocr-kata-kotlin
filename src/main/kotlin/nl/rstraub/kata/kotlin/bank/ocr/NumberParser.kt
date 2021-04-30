@@ -31,21 +31,21 @@ private const val TWO_ASCII =
 private const val FOUR_ASCII =
     "   " +
     "|_|" +
-    "  | "
+    "  |"
 private const val THREE_ASCII =
     " _ " +
     " _|" +
-    " _| "
+    " _|"
 
 private const val FIVE_ASCII =
     " _ " +
     "|_ " +
-    " _| "
+    " _|"
 
 private const val SIX_ASCII =
     " _ " +
     "|_ " +
-    "|_| "
+    "|_|"
 private const val SEVEN_ASCII =
     " _ " +
     "  |" +
@@ -53,13 +53,13 @@ private const val SEVEN_ASCII =
 private const val EIGHT_ASCII =
     " _ " +
     "|_|" +
-    "|_| "
+    "|_|"
 private const val NINE_ASCII =
     " _ " +
     "|_|" +
-    " _| "
+    " _|"
 
 private const val ZERO_ASCII =
     " _ " +
     "| |" +
-    "|_| "
+    "|_|"
