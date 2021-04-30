@@ -55,7 +55,7 @@ internal class InputParserTest : WordSpec({
             val input =
                 " _ " +
                 "|_ " +
-                "|_| " +
+                "|_|" +
                 "   "
 
             InputParser().parse(input) shouldBe "6"
@@ -68,6 +68,24 @@ internal class InputParserTest : WordSpec({
                 "   "
 
             InputParser().parse(input) shouldBe "7"
+        }
+        "convert an entry for a eight to a eight" {
+            val input =
+                " _ " +
+                "|_|" +
+                "|_|" +
+                "   "
+
+            InputParser().parse(input) shouldBe "8"
+        }
+        "convert an entry for a nine to a nine" {
+            val input =
+                " _ " +
+                "|_|" +
+                " _|" +
+                "   "
+
+            InputParser().parse(input) shouldBe "9"
         }
     }
 })
