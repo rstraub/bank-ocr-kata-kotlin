@@ -1,1 +1,1 @@
-rootProject.name = "args-kata-kotlin"
+rootProject.name = "bank-ocr-kata-kotlin"
