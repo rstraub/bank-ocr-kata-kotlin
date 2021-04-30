@@ -4,22 +4,25 @@ class AccountNumberParser {
     private companion object {
         val AMOUNT_OF_ASCII_NUMBERS_PER_LINE = 9
         val ASCII_NUMBERS_PER_LINE_RANGE = 0..AMOUNT_OF_ASCII_NUMBERS_PER_LINE - 1
+        val NUMBER_CHARACTERS_PER_LINE = 3
     }
 
-    fun parse(input: String): String {
-        return buildAsciiNumber(chonkize(input)).joinToString("", transform = NumberParser()::parse)
-    }
+    fun parse(input: String) = buildAsciiNumbers(input)
+        .joinToString("", transform = NumberParser()::parse)
 
-    private fun buildAsciiNumber(numberChunks: List<String>) =
+    private fun buildAsciiNumbers(numbers: String) =
         ASCII_NUMBERS_PER_LINE_RANGE
-            .map {
-                numberChunks[it] +
-                        numberChunks[it + AMOUNT_OF_ASCII_NUMBERS_PER_LINE] +
-                        numberChunks[it + AMOUNT_OF_ASCII_NUMBERS_PER_LINE * 2]
-            }
+            .map { buildAsciiNumber(numbers, it) }
 
-    private fun chonkize(input: String) = input
+    private fun buildAsciiNumber(numbers: String, it: Int): String {
+        val numberBlocks = asciiNumberBlocks(numbers)
+        return numberBlocks[it] +
+                numberBlocks[it + AMOUNT_OF_ASCII_NUMBERS_PER_LINE] +
+                numberBlocks[it + AMOUNT_OF_ASCII_NUMBERS_PER_LINE * 2]
+    }
+
+    private fun asciiNumberBlocks(input: String) = input
         .replace("\n", "")
-        .chunked(3)
+        .chunked(NUMBER_CHARACTERS_PER_LINE)
 
 }
