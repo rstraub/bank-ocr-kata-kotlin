@@ -16,7 +16,8 @@ enum class Numbers(val value: Int,val ascii: String) {
     SIX(6, SIX_ASCII),
     SEVEN(7, SEVEN_ASCII),
     EIGHT(8, EIGHT_ASCII),
-    NINE(9, NINE_ASCII)
+    NINE(9, NINE_ASCII),
+    ZERO(0,ZERO_ASCII)
 }
 const val ONE_ASCII =
     "   " +
@@ -57,3 +58,8 @@ const val NINE_ASCII =
     " _ " +
     "|_|" +
     " _| "
+
+const val ZERO_ASCII =
+    " _ " +
+    "| |" +
+    "|_| "

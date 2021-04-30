@@ -87,5 +87,14 @@ internal class InputParserTest : WordSpec({
 
             InputParser().parse(input) shouldBe "9"
         }
+        "convert an entry for a zero to a zero" {
+            val input =
+                " _ " +
+                "| |" +
+                "|_|" +
+                "   "
+
+            InputParser().parse(input) shouldBe "0"
+        }
     }
 })
