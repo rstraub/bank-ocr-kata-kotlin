@@ -23,5 +23,23 @@ internal class InputParserTest : WordSpec({
 
             InputParser().parse(input) shouldBe "7"
         }
+        "convert an entry for a two to a two" {
+            val input =
+                " _ " +
+                " _|" +
+                "|_ " +
+                "   "
+
+            InputParser().parse(input) shouldBe "2"
+            }
+        "convert an entry for a three to a three" {
+            val input =
+                " _ " +
+                " _|" +
+                " _| " +
+                "   "
+
+            InputParser().parse(input) shouldBe "3"
+        }
     }
 })
