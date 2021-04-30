@@ -6,22 +6,21 @@ import io.kotest.matchers.shouldBe
 internal class InputParserTest : WordSpec({
     "parse" should {
         "convert an entry for one to a one" {
-            val input = """
-            
-            |
-            |
-            
-        """.trimIndent()
+            val input =
+                "   " +
+                "  |" +
+                "  |" +
+                "   "
 
             InputParser().parse(input) shouldBe "1"
         }
         "convert an entry for a seven to a seven" {
-            val input = """
-                _
-                 |
-                 |
-                 
-            """.trimIndent()
+            val input =
+                " _ " +
+                "  |" +
+                "  |" +
+                "   "
+
             InputParser().parse(input) shouldBe "7"
         }
     }
